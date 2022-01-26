@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\format-text-bold.png" />
+    <None Remove="Data\format-text-italic.png" />
+    <None Remove="Data\format-text-underline.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\format-text-bold.png" />
+    <Resource Include="Data\format-text-italic.png" />
+    <Resource Include="Data\format-text-underline.png" />
+  </ItemGroup>
+
+</Project>
