@@ -9,8 +9,8 @@
         <sys:String>16</sys:String>
     </fontsize:ArrayList>
     <fontfamily:ArrayList x:Key="font">
-        <sys:String>12</sys:String>
-        <sys:String>14</sys:String>
-        <sys:String>16</sys:String>
+        <sys:String>Times New Roman</sys:String>
+        <sys:String>Arial</sys:String>
+        <sys:String>Verdana</sys:String>
     </fontfamily:ArrayList>
 </ResourceDictionary>
