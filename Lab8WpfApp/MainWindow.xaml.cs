@@ -36,6 +36,22 @@ namespace Lab8WpfApp
         public MainWindow()
         {
             InitializeComponent();
+            List<string> styles = new List<string>() { "Light", "Black" };
+            styleBox.ItemsSource = styles;
+            styleBox.SelectionChanged += ThemeChange;
+            styleBox.SelectedIndex = 0;
+        }
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            int styleIndex = styleBox.SelectedIndex;
+            Uri uri = new Uri("Light.xaml" + "Dictionary1.xaml", UriKind.Relative);
+            if (styleIndex == 1)
+            {
+                uri = new Uri("Dark.xaml" + "Dictionary1.xaml", UriKind.Relative);
+            }
+            ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resource);
         }
 
         private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
