@@ -1,0 +1,6 @@
+C:\Users\Алексей\source\repos\Lab8WpfApp\Lab8WpfApp\obj\Debug\net5.0-windows\Lab8WpfApp.csproj.AssemblyReference.cache
+C:\Users\Алексей\source\repos\Lab8WpfApp\Lab8WpfApp\obj\Debug\net5.0-windows\Dictionary1.baml
+C:\Users\Алексей\source\repos\Lab8WpfApp\Lab8WpfApp\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\Алексей\source\repos\Lab8WpfApp\Lab8WpfApp\obj\Debug\net5.0-windows\Lab8WpfApp_MarkupCompile.cache
+C:\Users\Алексей\source\repos\Lab8WpfApp\Lab8WpfApp\obj\Debug\net5.0-windows\Lab8WpfApp_MarkupCompile.lref
+C:\Users\Алексей\source\repos\Lab8WpfApp\Lab8WpfApp\obj\Debug\net5.0-windows\MainWindow.g.cs

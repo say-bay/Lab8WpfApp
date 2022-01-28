@@ -1,10 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Control FontFamily="Arial" x:Key="familyArial"/>
-    <Control FontFamily="Times New Roman" x:Key="familyTnR"/>
-    <Control FontFamily="Verdana" x:Key="familyVerdana"/>
-    <Control FontSize="12" x:Key="size12"/>
-    <Control FontSize="14" x:Key="size14"/>
-    <Control FontSize="16" x:Key="size16"/>
-
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assambly=microlib"
+                    xmlns:fontsize="clr-namespace:System.Collections;assambly=microlib"
+                    xmlns:fontfamily="clr-namespace:System.Collections;assambly=microlib">
+    <fontsize:ArrayList x:Key="size">
+        <sys:String>12</sys:String>
+        <sys:String>14</sys:String>
+        <sys:String>16</sys:String>
+    </fontsize:ArrayList>
+    <fontfamily:ArrayList x:Key="font">
+        <sys:String>12</sys:String>
+        <sys:String>14</sys:String>
+        <sys:String>16</sys:String>
+    </fontfamily:ArrayList>
 </ResourceDictionary>

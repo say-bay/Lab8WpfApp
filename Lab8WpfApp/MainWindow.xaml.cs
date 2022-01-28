@@ -20,6 +20,17 @@ namespace Lab8WpfApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    public class MyCommands
+    {
+        public static RoutedCommand Exit { get; set; }
+        static MyCommands()
+        {
+            InputGestureCollection inputs = new InputGestureCollection();
+            inputs.Add(new KeyGesture(Key.T, ModifierKeys.Control, "Ctrl+T"));
+            Exit = new RoutedCommand("Exit", typeof(MyCommands), inputs);
+        }
+    }
+
     public partial class MainWindow : Window
     {
         public MainWindow()
