@@ -41,6 +41,78 @@ namespace Lab8WpfApp
             styleBox.SelectionChanged += ThemeChange;
             styleBox.SelectedIndex = 0;
         }
+        private void ComboBox_SelectionChanged(object comboBox1, SelectionChangedEventArgs e)
+        {
+            string fontName = ((comboBox1 as ComboBox).SelectedItem as TextBlock).Text;
+            if (textBox != null)
+            {
+                textBox.FontFamily = new FontFamily(fontName);
+            }
+        }
+        private void ComboBox_SelectionChanged_1(object comboBox2, SelectionChangedEventArgs e)
+        {
+            string fontSize = ((comboBox2 as ComboBox).SelectedItem as TextBlock).Text;
+            if (textBox != null)
+            {
+                textBox.FontSize = System.Convert.ToDouble(fontSize);
+            }
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                if (textBox.FontWeight != (FontWeight)System.ComponentModel.TypeDescriptor.GetConverter(typeof(FontWeight)).ConvertFromInvariantString("Bold"))
+                {
+                    textBox.FontWeight = (FontWeight)System.ComponentModel.TypeDescriptor.GetConverter(typeof(FontWeight)).ConvertFromInvariantString("Bold");
+                }
+                else
+                {
+                    textBox.FontWeight = (FontWeight)System.ComponentModel.TypeDescriptor.GetConverter(typeof(FontWeight)).ConvertFromInvariantString("1");
+                }
+            }
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                if (textBox.FontStyle != (FontStyle)System.ComponentModel.TypeDescriptor.GetConverter(typeof(FontStyle)).ConvertFromInvariantString("Italic"))
+                {
+                    textBox.FontStyle = (FontStyle)System.ComponentModel.TypeDescriptor.GetConverter(typeof(FontStyle)).ConvertFromInvariantString("Italic");
+                }
+                else
+                {
+                    textBox.FontStyle = (FontStyle)System.ComponentModel.TypeDescriptor.GetConverter(typeof(FontStyle)).ConvertFromInvariantString("Normal");
+                }
+            }
+        }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                if (textBox.TextDecorations != (TextDecorationCollection)System.ComponentModel.TypeDescriptor.GetConverter(typeof(TextDecorationCollection)).ConvertFromInvariantString("Underline"))
+                {
+                    textBox.TextDecorations = (TextDecorationCollection)System.ComponentModel.TypeDescriptor.GetConverter(typeof(TextDecorationCollection)).ConvertFromInvariantString("Underline");
+                }
+                else
+                {
+                    textBox.TextDecorations = (TextDecorationCollection)System.ComponentModel.TypeDescriptor.GetConverter(typeof(TextDecorationCollection)).ConvertFromInvariantString("None");
+                }
+            }
+        }
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                textBox.SelectionTextBrush = (Brush)System.ComponentModel.TypeDescriptor.GetConverter(typeof(Brush)).ConvertFromInvariantString("Black");
+            }
+        }
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                textBox.SelectionTextBrush = (Brush)System.ComponentModel.TypeDescriptor.GetConverter(typeof(Brush)).ConvertFromInvariantString("Red");
+            }
+        }
         private void ThemeChange(object sender, SelectionChangedEventArgs e)
         {
             int styleIndex = styleBox.SelectedIndex;
@@ -53,12 +125,10 @@ namespace Lab8WpfApp
             Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resource);
         }
-
         private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
         private void OpenExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -68,7 +138,6 @@ namespace Lab8WpfApp
                 textBox.Text = File.ReadAllText(openFileDialog.FileName);
             }
         }
-
         private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
